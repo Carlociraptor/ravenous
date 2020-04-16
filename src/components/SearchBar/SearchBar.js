@@ -42,8 +42,16 @@ class SearchBar extends React.Component {
     }
 
     handleSearch(event){
-        this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy)
-        event.preventDefault()
+        event.preventDefault()          
+            if (!this.state.term){
+                return alert('Please enter a food type!')
+            }
+            if (!this.state.location){
+                return alert('Please enter a location!')
+            }          
+            if (!this.state.term || !this.state.location)return          
+            this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy)
+                  
     }
 
     renderSortByOptions() {
@@ -62,7 +70,7 @@ class SearchBar extends React.Component {
                     </ul>
                 </div>
                 <div class="SearchBar-fields">
-                    <input onChange={this.handleTermChange}placeholder="Search Businesses" />
+                    <input onChange={this.handleTermChange}placeholder="What are you in the mood for?" />
                     <input onChange={this.handleLocationChange}placeholder="Where?" />
                 </div>
                 <div class="SearchBar-submit">

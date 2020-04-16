@@ -9,13 +9,21 @@ import yelp from '../../util/Yelp'
 class App extends React.Component {
   constructor(props){
     super(props)
-    this.state = {businesses: []}
+    this.state = {businesses: [], networkError: false}
     this.searchYelp = this.searchYelp.bind(this)
   }
   searchYelp(term, location, sortBy){
     yelp.searchYelp(term, location, sortBy)
       .then((businesses) => {
-        this.setState({businesses: businesses })
+        this.setState({businesses: businesses, networkError: false })
+      })
+      .catch(err => {
+        if(err){
+          this.setState({
+            networkError: true,
+            businesses: []
+          })
+        }
       })
   }
 
@@ -24,7 +32,7 @@ class App extends React.Component {
       <div className="App">
         <h1>ravenous</h1>
         <SearchBar searchYelp={this.searchYelp}/>
-        <BusinessList businesses={this.state.businesses}/>
+        <BusinessList networkError={this.state.networkError} businesses={this.state.businesses}/>
       </div>
     );
   }

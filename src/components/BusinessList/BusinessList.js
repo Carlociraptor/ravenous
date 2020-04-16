@@ -5,6 +5,9 @@ import Business from '../business/Business';
 
 class BusinessList extends React.Component {
     render() {
+        if(this.props.networkError === true){
+           return <h1>Something went wrong!</h1>
+        }else{
         return (
             <div class="BusinessList">
                 {
@@ -13,7 +16,8 @@ class BusinessList extends React.Component {
                     })
                 }
             </div>
-        )
+            )
+        }
     }
 }
 
