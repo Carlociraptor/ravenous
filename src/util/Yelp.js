@@ -1,4 +1,4 @@
-const apiKey = ''
+const apiKey = 'baNWmeHUELiI_e9kFleyHwVyqOXCqrW794mr4-KrIQzEzE46x14O3zwlHS5KyqzeJrA8nh5IiHHZMuRl3Np7zxLqxhUFReU85TphPPimX4gXA0In8OStSQO_mUiYXnYx'
 
 const yelp = {
     searchYelp(term, location, sortBy){
@@ -19,7 +19,8 @@ const yelp = {
                             zipCode: business.location.zipCode,
                             category: business.categories[0].title,
                             rating: business.rating,
-                            reviewCount: business.review_count
+                            reviewCount: business.review_count,
+                            url: business.url
                         }
                     })
                 }
