@@ -10,13 +10,17 @@
   .Business .image-container {
     height: 16.66rem;
     margin-bottom: 1rem;
-    background-color:#CCA353;    
+    background-color: #b39c6d;
+    border: 1px groove #CCA353
   }
   
   .Business h2 {
     margin-bottom: .5rem;
     font-size: 1.2rem;
-    font-weight: 600;    
+    font-weight: 600;
+    text-decoration: underline;
+    color: #383735
+
   }
   
   .Business-information {
@@ -45,7 +49,7 @@
   }
   
   .Business-reviews h3 {
-    color: rgb(214, 155, 37);
+    color: #cc3131;
     font-weight: 600;
   }
   

@@ -8,19 +8,20 @@ class Business extends React.Component {
         return (
             <div className="Business">
                 <div className="image-container">
-                    <a href={this.props.business.url} target="_blank"><img src={this.props.business.imageSrc} alt='' /></a>
+                    <a href={this.props.business.url} target="_blank"  rel='noopener'><img src={this.props.business.imageSrc || './no_product.png'} alt='' /></a>
                 </div>
-                <h2>{this.props.business.name}</h2>
+                <a href={this.props.business.url} target="_blank" rel='noopener'><h2>{this.props.business.name}</h2></a>
                 <div className="Business-information">
                     <div className="Business-address">
+                        <p>Address:</p>
                         <p>{this.props.business.address}</p>
                         <p>{this.props.business.city}</p>
                         <p>{this.props.business.zipCode}</p>
                     </div>
                     <div className="Business-reviews">
-                        <h3>{this.props.business.category}</h3>
-                        <h3 className="rating">{this.props.business.rating}</h3>
-                        <p>{this.props.business.reviewCount}</p>
+                        <h3>{this.props.business.category}</h3>                        
+                        <h3 className="rating">Rating: {this.props.business.rating} &#9733;</h3>
+                        <p>Review Count: {this.props.business.reviewCount}</p>
                     </div>
                 </div>
             </div>
