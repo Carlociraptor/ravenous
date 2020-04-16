@@ -8,7 +8,7 @@ class Business extends React.Component {
         return (
             <div className="Business">
                 <div className="image-container">
-                    <a href={this.props.business.url} target="_blank"  rel='noopener'><img src={this.props.business.imageSrc || './no_product.png'} alt='' /></a>
+                    <a href={this.props.business.url} target="_blank"  rel='noopener'><img src={this.props.business.imageSrc} onerror='./no_product.png' alt='' /></a>
                 </div>
                 <a href={this.props.business.url} target="_blank" rel='noopener'><h2>{this.props.business.name}</h2></a>
                 <div className="Business-information">
